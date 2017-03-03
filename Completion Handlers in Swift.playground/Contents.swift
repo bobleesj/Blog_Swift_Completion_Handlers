@@ -30,25 +30,25 @@ firstVC.present(nextVC, animated: true) { print("Done🔨") }
 
 
 //: Design Completion Handlers
-func workHard(handlerBlock: (Bool) -> Void) {
+func workHard(enterDoStuff: (Bool) -> Void) {
   
-  for _ in 1...1000 {
+  for _ in 1...100 {
     print("👷🏻‍♀️👷🏻👷🏽👷🏽‍♀️👷🏿‍♀️👷🏿")
   }
   
-  handlerBlock(true)
+  enterDoStuff(true)
   
 }
 
 
-
 // 👷🏽👷🏽‍♀️🔨
-
 let myHanlderBlock: (Bool) -> Void = { doneWork in
   if doneWork {
     print("We've finished working, bruh")
   }
 }
+
+myHanlderBlock(true)
 
 
 let handlerBlock: (Bool) -> Void = {
@@ -57,41 +57,62 @@ let handlerBlock: (Bool) -> Void = {
   }
 }
 
-// workHard(handlerBlock: handlerBlock)
+//: Call the functino
+workHard(enterDoStuff: handlerBlock)
 
+//: Shorter Version 
+workHard { (doneWwork) in
+  if doneWwork {
+    "We've finished working, bruh"
+  }
+}
 
+//: Shortest Version 
+workHard {
+  if $0 {
+    "We've finished working, bruh"
+  }
+}
 
 
 // Pass Data to Completion Handlers 
-let handlerReturnValue: (Bool) -> String = {
-  
-  var name = ""
-  if $0 {
-    name = "Bob the Developer"
-  } else {
-    name = "Does not exist"
-  }
 
-  return name
+
+//: Design Function Block
+func workSuperHard(doStuffBlock: ([String]) -> Void) {
+  for _ in 1...100 {
+    print("But you gotta put in work, work, work")
+  }
+  
+  doStuffBlock(["Blog","Course", "Editing", "Helping"])
+}
+
+
+//: Design Stuff Block
+let handler: ([String]) -> Void = { (array) in print("Done working") }
+
+
+//: Call Function
+workSuperHard(doStuffBlock: handler)
+workSuperHard { (workList) in
+  // workList is now ["Blog", "Course", ...]
+  print("I love writing \(workList[0])")
 }
 
 
 
-func runFunction(handlerBlock: ([String]) -> [String]) {
-  for _ in 1...10000 {
-    print("Hello from the other side")
-  }
-  
-  handlerBlock(["Bob", "Bob Lee", "SangJoon", "Lee"])
-}
-
-
-runFunction(handlerBlock: { isSuccess in
-  return isSuccess
-})
-
-
-
+//: 
+/* 
+ 
+ Alamofire.request("").responseJSON { response i
+ print(response.result)   // result of response serialization
+ 
+ if let JSON = response.result.value {
+ print("JSON: \(JSON)")
+ }
+ }
+ 
+*/
 
 
 

@@ -2,15 +2,14 @@
  
  ## Completion Handlers in Swift with Bob
  Full tutotiral originally published on [Medium] by Bob Lee
- - Last Update on March 5th, 2017
+ - Last Update on March 4th, 2017
  - Swift 3 & iOS 10
  
  [Medium]: https://medium.com/ios-geek-community/intro-to-swift-functional-programming-with-bob-9c503ca14f13#.x47hcc2mn
  */
 
 
-
-//: Completion Handler Block in Present
+//: Completion Handler Block in Presenting View Controllers
 import UIKit
 
 let firstVC = UIViewController()
@@ -28,6 +27,27 @@ firstVC.present(nextVC, animated: true, completion: {
 firstVC.present(nextVC, animated: true) { print("Done🔨") }
 
 
+//: ## Create Own Completion Handlers
+//: > It's all about doing *stuff* after things are over
+
+
+//: Design Stuff Block
+let myHanlderBlock: (Bool) -> Void = { doneWork in
+  if doneWork {
+    print("We've finished working, bruh")
+  }
+}
+
+myHanlderBlock(true)
+
+//: Shorter Stuff Block
+let handlerBlock: (Bool) -> Void = {
+  if $0 {
+    print("We've finished working, bruh")
+  }
+}
+
+
 
 //: Design Completion Handlers
 func workHard(enterDoStuff: (Bool) -> Void) {
@@ -41,24 +61,10 @@ func workHard(enterDoStuff: (Bool) -> Void) {
 }
 
 
-// 👷🏽👷🏽‍♀️🔨
-let myHanlderBlock: (Bool) -> Void = { doneWork in
-  if doneWork {
-    print("We've finished working, bruh")
-  }
-}
 
-myHanlderBlock(true)
-
-
-let handlerBlock: (Bool) -> Void = {
-  if $0 {
-    print("We've finished working, bruh")
-  }
-}
-
-//: Call the functino
+//: ## Call the function
 workHard(enterDoStuff: handlerBlock)
+
 
 //: Shorter Version 
 workHard { (doneWwork) in
@@ -75,46 +81,55 @@ workHard {
 }
 
 
-// Pass Data to Completion Handlers 
 
+
+
+
+//: ## Pass Data to Completion Handlers
+
+//: Design Stuff Block
+let handler: ([String]) -> Void = { (array) in print("Done working \(array)") }
 
 //: Design Function Block
-func workSuperHard(doStuffBlock: ([String]) -> Void) {
+func workSuperHard(doneStuffBlock: ([String]) -> Void) {
   for _ in 1...100 {
     print("But you gotta put in work, work, work")
   }
   
-  doStuffBlock(["Blog","Course", "Editing", "Helping"])
+  doneStuffBlock(["Blog","Course", "Editing", "Helping"])
 }
-
-
-//: Design Stuff Block
-let handler: ([String]) -> Void = { (array) in print("Done working") }
 
 
 //: Call Function
-workSuperHard(doStuffBlock: handler)
+workSuperHard(doneStuffBlock: handler)
+
+//: Pass Closure Directly
 workSuperHard { (workList) in
   // workList is now ["Blog", "Course", ...]
-  print("I love writing \(workList[0])")
+  print("I've done \(workList[0])")
 }
 
+//: Shorter Version
+workSuperHard { print("Don't fire me. I did \($0[0])") }
+// $0 is now ["Blog", "Course", ...]
 
 
-//: 
+//: Practical Examples how you pass response/json through completion handlers
 /* 
  
  Alamofire.request("").responseJSON { response i
  print(response.result)   // result of response serialization
  
- if let JSON = response.result.value {
- print("JSON: \(JSON)")
- }
+  if let JSON = response.result.value {
+   print("JSON: \(JSON)")
+  }
  }
  
 */
 
 
+
+//: **Last Message:** If you are confused by this tutorial, I really need you to keep studying over and over until your eyes become familar with the closure snytax. Again, you have resources available on the bottom. Good luck!
 
 
 /*:

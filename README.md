@@ -3,14 +3,14 @@
 
 ![Cover Photo](https://cdn-images-1.medium.com/max/2000/1*uq_HyTJxO-t09vGJbC3Z5w.png)
 
-## Functional programming?
-You get it. People are talking about it. You google and look up the first 5 articles from the top. Frustrated, you notice most tutorials pull a vague Wikipedia definition like,
 
-> “Functional Programming is a paradigm that allows you to make your code explicit. There is no state and no mutuality”
+## Problem of Mine
 
-I’ve been there my friend. In fact, I still do. I give a gentle degree of a face-palm wrapped around my mouth and respond,
+I often visit Stack Overflow. But, I’ve noticed people over there can be a little geeky, and many answers are terse and hard to understand based on my experience. So, here I’m, Bob the Developer, trying to save lives of many, and most importantly, prevent your hair from falling due to stress and disorder. Let’s go. 👶
 
-> Dafuq?
+## Prerequisite
+
+Completion Handlers took me months to master. It is not an easy concept if you are not good with closures. To enjoy the ride with me, you need to know trailing closures, the meaning of $0 and that you may pass or return a closure.
 
 ...You may read the full tutorial [here](https://medium.com/ios-geek-community/completion-handlers-in-swift-with-bob-6a2a1a854dc4#.t51v7us9y)
 

@@ -1,4 +1,4 @@
-# Intro to Swift Functional Programming
+# Completion Handlers in Swift
 
 
 ![Cover Photo](https://cdn-images-1.medium.com/max/2000/1*uq_HyTJxO-t09vGJbC3Z5w.png)

@@ -1,7 +1,7 @@
 # Intro to Swift Functional Programming
 
 
-![Cover Photo](https://cdn-images-1.medium.com/max/2000/1*AHNKmNnflyMN2zfQh9Cb4Q.png)
+![Cover Photo](https://cdn-images-1.medium.com/max/2000/1*uq_HyTJxO-t09vGJbC3Z5w.png)
 
 ## Functional programming?
 You get it. People are talking about it. You google and look up the first 5 articles from the top. Frustrated, you notice most tutorials pull a vague Wikipedia definition like,
@@ -12,7 +12,7 @@ I’ve been there my friend. In fact, I still do. I give a gentle degree of a fa
 
 > Dafuq?
 
-...You may read the full tutorial [here](https://medium.com/ios-geek-community/intro-to-swift-functional-programming-with-bob-9c503ca14f13#.x47hcc2mn)
+...You may read the full tutorial [here](https://medium.com/ios-geek-community/completion-handlers-in-swift-with-bob-6a2a1a854dc4#.t51v7us9y)
 
 
 #### Stay Connected
